@@ -1,6 +1,12 @@
 import React from "react";
 import "./Navbar.css";
-import { AppBar, Button, IconButton, Toolbar, Typography } from "@material-ui/core";;
+import {
+  AppBar,
+  Button,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -17,22 +23,26 @@ function Navbar() {
             </Box>
 
             <Box display="flex" justifyContent="start">
-              <Box mx={1} style={{ cursor: "pointer" }}>
-                <Typography variant="h6" color="inherit">
-                  Home
-                </Typography>
-              </Box>
+              <Link to="/home">
+                <Box mx={1} style={{ cursor: "pointer" }}>
+                  <Typography variant="h6" color="inherit">
+                    Home
+                  </Typography>
+                </Box>
+              </Link>
               <Box mx={1} style={{ cursor: "pointer" }}>
                 <Typography variant="h6" color="inherit">
                   Sobre
                 </Typography>
               </Box>
 
-              <IconButton>
-            </IconButton>
-            <Button  variant="contained" style={{ backgroundColor: 'green', color: 'white' }}>
-              Login
-            </Button>
+              <IconButton></IconButton>
+              <Button
+                variant="contained"
+                style={{ backgroundColor: "green", color: "white" }}
+              >
+                Login
+              </Button>
             </Box>
           </Box>
         </Toolbar>

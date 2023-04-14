@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
-import './App.css'
+import { useState } from "react";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import "./App.css";
+import Home from "./paginas/home/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-   <>
-      <Navbar/>
-      <Footer/>
-    </>
-     
-     
+    <BrowserRouter>
+    <Navbar />
+    <div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        {/* <Route path='/login' element={<Sobre />} /> */}
+        {/* <Route path='/home' element={<Login />} /> */}
+      </Routes>
+    </div>
+    <Footer />
+  </BrowserRouter>
   );
 }
 
-export default App
+export default App;
