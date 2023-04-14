@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Button, IconButton, Toolbar, Typography } from "@material-ui/core";;
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -28,11 +28,11 @@ function Navbar() {
                 </Typography>
               </Box>
 
-              <Box mx={1}>
-                <Typography variant="h6" color="inherit">
-                  Login
-                </Typography>
-              </Box>
+              <IconButton>
+            </IconButton>
+            <Button  variant="contained" style={{ backgroundColor: 'green', color: 'white' }}>
+              Login
+            </Button>
             </Box>
           </Box>
         </Toolbar>
