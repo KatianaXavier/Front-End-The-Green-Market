@@ -36,13 +36,14 @@ function Navbar() {
                 </Typography>
               </Box>
 
-              <IconButton></IconButton>
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "green", color: "white" }}
-              >
-                Login
-              </Button>
+              <Link to="/login">
+                <Button
+                  variant="contained"
+                  style={{ backgroundColor: "green", color: "white" }}
+                >
+                  Login
+                </Button>
+              </Link>
             </Box>
           </Box>
         </Toolbar>
