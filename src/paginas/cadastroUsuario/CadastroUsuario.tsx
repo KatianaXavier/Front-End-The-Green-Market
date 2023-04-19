@@ -3,7 +3,7 @@ import "./CadastroUsuario.css";
 import { Box, Typography, Button, Grid, TextField } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { User } from "../../models/User";
-// import { cadastrarUsuario } from "../../services/Service";
+import { cadastrarUsuario } from "../../services/Services"
 
 export const CadastroUsuario = () => {
    const history = useNavigate();
@@ -29,7 +29,7 @@ export const CadastroUsuario = () => {
       cepUsuario: "",
       usuario: "",
       fotoUsuario: "",
-      senhaUsuario: "",
+      senhaUsuario: ""
    });
 
    const [confirmarSenha, setConfirmarSenha] = useState<string>("");
@@ -49,11 +49,11 @@ export const CadastroUsuario = () => {
 
       if (confirmarSenha === usuario.senhaUsuario) {
          try {
-            // await cadastrarUsuario(
-            // 	"/usuarios/cadastrar",
-            // 	usuario,
-            // 	setUsuarioResult
-            // );
+             await cadastrarUsuario(
+             	"/usuarios/cadastrar",
+            	usuario,
+            	setUsuarioResult
+            );
             alert("Usuário cadastrado com sucesso");
          } catch (error) {
             console.error(error);

@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Grid, Box, Typography, TextField } from "@mui/material";
 import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
 
 function Login() {
+
+    const history = useNavigate()
+    const [token, setToken] = useLocalStorage("token")
+    const [userLogin, setUserLogin] = useState<UserLogin>({
+    idUsuario: 0,
+      nomeUsuario: "",
+      cpfUsuario: "",
+      enderecoUsuario: "",
+      telefoneUsuario: "",
+      cepUsuario: "",
+      usuario: "",
+      fotoUsuario: "",
+      senhaUsuario: "",
+      token: ""
+    })
+
+
  return (
   <Grid container direction="row" justifyContent="center" alignItems="center">
    <Grid alignItems="center" xs={6}>
