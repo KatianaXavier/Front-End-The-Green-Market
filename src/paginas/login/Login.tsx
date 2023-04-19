@@ -37,10 +37,10 @@ function Login() {
       await login("/usuarios/logar", userLogin, setToken);
 
 
-      alert("Login realizado com Sucesso.");
+      alert("Login realizado com sucesso!");
     } catch (error) {
       console.log(error);
-      alert("Usuario ou Senha invalidos.");
+      alert("Usuário ou senha inválidos.");
     }
   }
   useEffect(() => {
@@ -103,7 +103,7 @@ function Login() {
               </Typography>
             </Box>
 
-            <Link to="/cadastrarUsuario">
+            <Link to="/cadastro">
               <Typography
                 variant="subtitle1"
                 gutterBottom

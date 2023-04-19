@@ -9,22 +9,21 @@ import Sobre from "./paginas/sobre/Sobre";
 import { CadastroUsuario } from "./paginas/cadastroUsuario/CadastroUsuario";
 
 function App() {
- return (
-  <BrowserRouter>
-   <Navbar />
-   <div>
-    <Routes>
-     <Route path="/" element={<Login />} />
-     <Route path="/home" element={<Home />} />
-     <Route path="/login" element={<Login />} />
-     <Route path="/sobre" element={<Sobre />} />
-     <Route path="/sobre" element={<Sobre />} />
-     <Route path="/cadastrarUsuario" element={<CadastroUsuario />} />
-    </Routes>
-   </div>
-   <Footer />
-  </BrowserRouter>
- );
+    return (
+        <BrowserRouter>
+            <Navbar />
+            <div>
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/sobre" element={<Sobre />} />
+                    <Route path="/cadastro" element={<CadastroUsuario />} />
+                </Routes>
+            </div>
+            <Footer />
+        </BrowserRouter>
+    );
 }
 
 export default App;

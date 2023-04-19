@@ -49,18 +49,18 @@ export const CadastroUsuario = () => {
 
       if (confirmarSenha === usuario.senhaUsuario) {
          try {
-             await cadastrarUsuario(
-             	"/usuarios/cadastrar",
-            	usuario,
-            	setUsuarioResult
+            await cadastrarUsuario(
+               "/usuarios/cadastrar",
+               usuario,
+               setUsuarioResult
             );
-            alert("Usuário cadastrado com sucesso");
+            alert("Usuário cadastrado com sucesso!");
          } catch (error) {
             console.error(error);
-            alert("Por favor, verifique os campos");
+            alert("Por favor, verifique os campos.");
          }
       } else {
-         alert("As senhas não coincidem");
+         alert("As senhas não coincidem.");
          setConfirmarSenha("");
          setUsuario({
             ...usuario,
@@ -109,26 +109,65 @@ export const CadastroUsuario = () => {
                         />
                         <TextField
                            variant="outlined"
+                           name="cpfUsuario"
+                           value={usuario.cpfUsuario}
+                           onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                              updateModel(event)
+                           }
+                           label="CPF"
+                           margin="normal"
+                           required
+                           fullWidth
+                        />
+                        <TextField
+                           variant="outlined"
+                           name="enderecoUsuario"
+                           value={usuario.enderecoUsuario}
+                           onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                              updateModel(event)
+                           }
+                           label="Endereço completo"
+                           margin="normal"
+                           required
+                           fullWidth
+                        />
+                        <TextField
+                           variant="outlined"
+                           name="telefoneUsuario"
+                           value={usuario.telefoneUsuario}
+                           onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                              updateModel(event)
+                           }
+                           label="Telefone"
+                           margin="normal"
+                           required
+                           type='tel'
+                           fullWidth
+                        />
+                        <TextField
+                           variant="outlined"
+                           name="cepUsuario"
+                           value={usuario.cepUsuario}
+                           onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                              updateModel(event)
+                           }
+                           label="CEP"
+                           margin="normal"
+                           required
+                           type='text'
+                           fullWidth
+                        />
+                        <TextField
+                           variant="outlined"
                            name="usuario"
                            value={usuario.usuario}
                            onChange={(event: ChangeEvent<HTMLInputElement>) =>
                               updateModel(event)
                            }
-                           label="Usuário (endereço de e-mail)"
+                           label="E-mail"
                            margin="normal"
                            required
                            type="email"
-                           fullWidth
-                        />
-                        <TextField
-                           variant="outlined"
-                           name="fotoUsuario"
-                           value={usuario.fotoUsuario}
-                           onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                              updateModel(event)
-                           }
-                           label="Foto (URL)"
-                           margin="normal"
                            fullWidth
                         />
                         <TextField
@@ -187,3 +226,5 @@ export const CadastroUsuario = () => {
       </>
    );
 };
+
+export default CadastroUsuario;
