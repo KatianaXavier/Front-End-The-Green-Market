@@ -1,6 +1,7 @@
 .imagemCadastro {
-   background-image: url("https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHRlY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
-   min-height: 100vh;
-   background-repeat: no-repeat;
-   background-size: cover;
+  background-image: url("../../assets/img/Mobile-login-pana.svg");
+  min-height: 90vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }

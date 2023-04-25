@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2? family=Antic+Slab&display=swap");
 
 :root {
-  --Brac-200:       #fff8f8;
-  --Verd-400:      #0b945b;
+  --Brac-200: #fff8f8;
+  --Verd-400: #0b945b;
 }
-
-
 
 *,
 *::before,
@@ -15,11 +13,12 @@
 
 * {
   margin: 0;
-  font-family: "Antic One", cursive !important;
+  /* font-family: "Antic One", cursive !important; */
 }
 html,
 body {
   height: 100%;
+  font-family: "Poppins", sans-serif;
 }
 body {
   line-height: 1.5;
