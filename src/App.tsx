@@ -9,6 +9,7 @@ import Sobre from "./paginas/sobre/Sobre";
 import { CadastroUsuario } from "./paginas/cadastroUsuario/CadastroUsuario";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import { ListaCategoria } from "./components/categorias/listaCategoria/ListaCategoria";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/cadastro" element={<CadastroUsuario />} />
+            <Route path="/categoria" element={<ListaCategoria />} />
           </Routes>
         </div>
         <Footer />
