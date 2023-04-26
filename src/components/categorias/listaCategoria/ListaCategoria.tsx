@@ -63,8 +63,12 @@ if (token === '') {
                     Categoria:
                   </Typography>
                   <Typography variant="h5" component="h2">
+                    {categoria.nomeCategoria}
+                  </Typography>
+                  <Typography variant="h6" component="h6">
                     {categoria.descricaoCategoria}
                   </Typography>
+                  
                 </CardContent>
                 <CardActions>
                   <Link to={`/editarCategoria/${categoria.idCategoria}`}>

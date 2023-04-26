@@ -6,10 +6,13 @@ import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import { UserLogin } from "../../models/UserLogin";
 import { login } from "../../services/Services";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/action";
 
 function Login() {
   const history = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
+  const [token, setToken] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [userLogin, setUserLogin] = useState<UserLogin>({
     idUsuario: 0,
     nomeUsuario: "",
@@ -23,6 +26,9 @@ function Login() {
     token: "",
   });
 
+  const dispatch = useDispatch();
+
+
   function updateModel(event: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
       ...userLogin,
@@ -33,21 +39,25 @@ function Login() {
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    
     try {
+      setIsLoading(true)
       await login("/usuarios/logar", userLogin, setToken);
 
       alert("Login realizado com sucesso!");
     } catch (error) {
-      console.log(error);
+      setIsLoading(false)
       alert("Usuário ou senha inválidos.");
     }
   }
   useEffect(() => {
-    console.log(userLogin);
     if (token !== "") {
+      dispatch(addToken(token));
       history("/home");
     }
   }, [token]);
+
+
 
   return (
     <Grid
@@ -97,11 +107,15 @@ function Login() {
             />
             <Box marginTop={2} textAlign="center">
               <Button
+                disabled ={isLoading}
                 type="submit"
                 variant="contained"
                 style={{ background: "#2d5540", color: "#fff" }}
               >
-                Logar
+                  {isLoading?(
+                  <span className="Loader">Carregando</span>   
+                ):"Logar"}
+
               </Button>
             </Box>
           </form>
