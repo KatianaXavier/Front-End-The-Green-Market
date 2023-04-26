@@ -12,6 +12,7 @@ import { store } from "./store/store";
 import { ListaCategoria } from "./components/categorias/listaCategoria/ListaCategoria";
 import { CadastroCategoria } from "./components/categorias/cadastroCategoria/cadastroCategoria";
 import { ListaProdutos } from "./components/produtos/ListaProdutos";
+import { CadastroProduto } from "./components/produtos/CadastroProduto";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/categoria" element={<ListaCategoria />} />
             <Route path="/criarCategoria" element={<CadastroCategoria />} />
-            <Route path="/listaProdutos" element={<ListaProdutos />} />
+            <Route path="/produtos" element={<ListaProdutos />} />
+            <Route path="/criarProduto" element={<CadastroProduto />} />
           </Routes>
         </div>
         <Footer />
