@@ -3,8 +3,16 @@ import { Button, Grid, Typography } from "@material-ui/core";
 import "./Home.css";
 import { Box } from "@mui/material";
 import Logo from "./../../assets/img/Dropshipping-model-rafiki.svg";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+
+  const history = useNavigate();
+
+  function produtos(){
+    history('/listaProdutos')
+  }
+
   return (
     <>
       <Grid
@@ -42,6 +50,7 @@ function Home() {
               type="submit"
               size="large"
               variant="contained"
+              onClick={produtos}
             >
               Ver produtos
             </Button>
