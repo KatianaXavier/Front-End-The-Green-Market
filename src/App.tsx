@@ -10,6 +10,7 @@ import { CadastroUsuario } from "./paginas/cadastroUsuario/CadastroUsuario";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { ListaCategoria } from "./components/categorias/listaCategoria/ListaCategoria";
+import { CadastroCategoria } from "./components/categorias/cadastroCategoria/cadastroCategoria";
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/sobre" element={<Sobre />} />
             <Route path="/cadastro" element={<CadastroUsuario />} />
+            <Route path="/sobre" element={<Sobre />} />
             <Route path="/categoria" element={<ListaCategoria />} />
+            <Route path="/criarCategoria" element={<CadastroCategoria />} />
           </Routes>
         </div>
         <Footer />
