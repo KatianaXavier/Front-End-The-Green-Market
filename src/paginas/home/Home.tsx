@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Grid, Typography } from "@material-ui/core";
 import "./Home.css";
 import { Box } from "@mui/material";
 import Logo from "./../../assets/img/Dropshipping-model-rafiki.svg";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
 
 function Home() {
 
@@ -12,6 +14,18 @@ function Home() {
   function produtos(){
     history('/produtos')
   }
+
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  );
+
+  useEffect(() => {
+    if (token === "") {
+      console.log(token);
+      alert("sem token não rola");
+      history("/login");
+    }
+  });
 
   return (
     <>

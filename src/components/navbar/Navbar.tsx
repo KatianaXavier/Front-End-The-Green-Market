@@ -11,13 +11,19 @@ import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "./../../assets/img/The_Green-Final.png";
 import useLocalStorage from "react-use-localstorage";
+import { useSelector, useDispatch } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
+import { addToken } from "../../store/tokens/action";
 
 function Navbar() {
-  const [token, setToken] = useLocalStorage("token");
+  const dispatch = useDispatch();
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  );
   const history = useNavigate();
 
   const back = () => {
-    setToken("");
+    dispatch(addToken (""));
     history("/login");
   };
   return (
@@ -65,10 +71,10 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/criarCategoria" style={{ alignItems: "center", display: "flex" }}>
+              <Link to="/produtos" style={{ alignItems: "center", display: "flex" }}>
                 <Box mx={1} style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="inherit">
-                    Criar categoria
+                    Produtos
                   </Typography>
                 </Box>
               </Link>

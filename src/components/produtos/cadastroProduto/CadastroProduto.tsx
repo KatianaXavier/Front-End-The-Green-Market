@@ -221,11 +221,10 @@ export function CadastroProduto() {
             type="submit"
             disabled={categoria.idCategoria === 0}
           >
-            {categoria.idCategoria === 0 && id === undefined
+            {categoria.idCategoria === 0
               ? "Selecione uma categoria"
-              : "Cadastrar"}
-            {categoria.idCategoria !== 0 && id !== undefined
-              ? "Selecione uma categoria"
+              : id === undefined
+              ? "Cadastrar"
               : "Editar"}
             {/*ver se vai alterar para atualizar ou manter editar*/}
           </Button>
