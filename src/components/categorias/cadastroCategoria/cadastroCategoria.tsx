@@ -91,7 +91,7 @@ export function CadastroCategoria() {
                         gutterBottom
                         fontWeight={'bold'}
                     >
-                        {/* if ternário */}
+                        
                         {categoria.idCategoria !== 0 ? 'Atualizar categoria' : 'Cadastrar cagetoria'}
                     </Typography>
                     <form onSubmit={onSubmit}>

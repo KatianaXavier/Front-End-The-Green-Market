@@ -12,12 +12,12 @@ import {
 } from "@mui/material";
 // import './CadastroPruduto.css';
 
-import { Produto } from "../../models/Produto";
+import { Produto } from "../../../models/Produto";
 import { useNavigate, useParams } from "react-router-dom";
-import { Categoria } from "../../models/Categoria";
-import { getAll, getById, put, post } from "../../services/Services";
+import { Categoria } from "../../../models/Categoria";
+import { getAll, getById, put, post } from "../../../services/Services";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 export function CadastroProduto() {
   const history = useNavigate();
@@ -127,14 +127,14 @@ export function CadastroProduto() {
       <Container maxWidth={"sm"}>
         <form className="cadastroPost" onSubmit={onSubmit}>
           <Typography marginTop={4} variant="h3" align="center">
-            Cadastrar pruduto
+            {produto.idProduto !== 0 ? 'Editar produto' : 'Cadastrar produto'}
           </Typography>
           <TextField
             value={produto.nomeProduto}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
             }
-            label="Titulo da pruduto"
+            label="Titulo da produto"
             name="nomeProduto"
             id="titulo"
             variant="outlined"
@@ -221,9 +221,13 @@ export function CadastroProduto() {
             type="submit"
             disabled={categoria.idCategoria === 0}
           >
-            {categoria.idCategoria === 0
-              ? "selecione uma categoria"
-              : "cadastrar"}
+            {categoria.idCategoria === 0 && id === undefined
+              ? "Selecione uma categoria"
+              : "Cadastrar"}
+            {categoria.idCategoria !== 0 && id !== undefined
+              ? "Selecione uma categoria"
+              : "Editar"}
+            {/*ver se vai alterar para atualizar ou manter editar*/}
           </Button>
         </form>
       </Container>

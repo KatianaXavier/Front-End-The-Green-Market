@@ -9,12 +9,12 @@ import {
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { Produto } from "../../models/Produto";
-import { getAll } from "../../services/Services";
-import { addToken } from "../../store/tokens/action";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { Produto } from "../../../models/Produto";
+import { getAll } from "../../../services/Services";
+import { addToken } from "../../../store/tokens/action";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
-export function ListaProdutos() {
+export function ListaProduto() {
   const dispatch = useDispatch();
 
   const token = useSelector<TokenState, TokenState["token"]>(
@@ -74,9 +74,9 @@ export function ListaProdutos() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link to={`/atualizarProduto/${produto.idProduto}`}>
+                <Link to={`/editarProduto/${produto.idProduto}`}>
                   <Button color="primary" variant="contained" size="small">
-                    Atualizar
+                    Editar
                   </Button>
                 </Link>
                 <Link to={`/deletarProduto/${produto.idProduto}`}>

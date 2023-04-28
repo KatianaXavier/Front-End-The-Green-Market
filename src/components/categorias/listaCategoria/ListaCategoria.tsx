@@ -40,8 +40,8 @@ export function ListaCategoria () {
     useEffect(() => {
     
 if (token === '') {
-    //alert("Acesso não Autorizado")
-    //history('/login')
+    alert("Acesso não Autorizado")
+    history('/login')
 }
     },[]
     );

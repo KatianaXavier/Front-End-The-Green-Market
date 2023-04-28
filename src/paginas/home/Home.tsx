@@ -10,7 +10,7 @@ function Home() {
   const history = useNavigate();
 
   function produtos(){
-    history('/listaProdutos')
+    history('/produtos')
   }
 
   return (
