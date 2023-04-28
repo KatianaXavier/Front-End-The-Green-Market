@@ -58,10 +58,10 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/categoria" style={{ alignItems: "center", display: "flex" }}>
+              <Link to="/categorias" style={{ alignItems: "center", display: "flex" }}>
                 <Box mx={1} style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="inherit">
-                    Categoria
+                    Categorias
                   </Typography>
                 </Box>
               </Link>

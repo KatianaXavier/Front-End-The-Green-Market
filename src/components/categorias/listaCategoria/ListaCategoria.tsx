@@ -77,6 +77,7 @@ if (token === '') {
                   </Button>
                   </Link>
                   <Link to={`/deletarCategoria/${categoria.idCategoria}`}>
+                    
                   <Button color="error" variant="contained" size="small">
                     Deletar
                   </Button>

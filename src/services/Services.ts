@@ -56,3 +56,12 @@ export const put = async (
   const resposta = await api.put(url, dados, headers);
   setDados(resposta.data);
 };
+
+export const deleteId = async (
+  url: string,
+  headers: object
+) => {
+  await api.delete(url, headers);
+  
+};
+
