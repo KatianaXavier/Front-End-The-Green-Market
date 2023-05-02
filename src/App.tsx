@@ -15,11 +15,25 @@ import { ListaProduto } from "./components/produtos/listaProduto/ListaProduto";
 import { CadastroProduto } from "./components/produtos/cadastroProduto/CadastroProduto";
 import { DeleteCategoria } from "./components/categorias/deleteCategoria/DeleteCategoria";
 import { DeleteProduto } from "./components/produtos/deleteProduto/DeleteProduto";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
         <Navbar />
         <div>
           <Routes>
@@ -30,7 +44,10 @@ function App() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/categorias" element={<ListaCategoria />} />
             <Route path="/criarCategoria" element={<CadastroCategoria />} />
-            <Route path="/editarCategoria/:id" element={<CadastroCategoria />} />
+            <Route
+              path="/editarCategoria/:id"
+              element={<CadastroCategoria />}
+            />
             <Route path="/deletarCategoria/:id" element={<DeleteCategoria />} />
             <Route path="/produtos" element={<ListaProduto />} />
             <Route path="/criarProduto" element={<CadastroProduto />} />

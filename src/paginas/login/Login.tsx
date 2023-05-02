@@ -8,6 +8,7 @@ import { UserLogin } from "../../models/UserLogin";
 import { login } from "../../services/Services";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/action";
+import { toast } from "react-toastify";
 
 function Login() {
   const history = useNavigate();
@@ -47,7 +48,16 @@ function Login() {
       alert("Login realizado com sucesso!");
     } catch (error) {
       setIsLoading(false)
-      alert("Usuário ou senha inválidos.");
+      toast.error("Usuário ou senha inválidos.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
   }
   useEffect(() => {
