@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Box } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "./../../assets/img/The_Green-Final.png";
 import useLocalStorage from "react-use-localstorage";
 import { useSelector, useDispatch } from "react-redux";
@@ -44,40 +44,48 @@ function Navbar() {
             </Link>
 
             <Box display="flex" justifyContent="start">
-              <Link
+              <NavLink
+                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
                 to="/home"
                 style={{ alignItems: "center", display: "flex" }}
               >
-                <Box mx={1} style={{ cursor: "pointer" }}>
+                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="inherit">
                     Home
                   </Typography>
                 </Box>
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
+                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
                 to="/sobre"
                 style={{ alignItems: "center", display: "flex" }}
               >
-                <Box mx={1} style={{ cursor: "pointer" }}>
+                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="inherit">
                     Sobre
                   </Typography>
                 </Box>
-              </Link>
-              <Link to="/categorias" style={{ alignItems: "center", display: "flex" }}>
-                <Box mx={1} style={{ cursor: "pointer" }}>
+              </NavLink>
+              <NavLink
+                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
+                to="/categorias" 
+                style={{ alignItems: "center", display: "flex" }}>
+                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="inherit">
                     Categorias
                   </Typography>
                 </Box>
-              </Link>
-              <Link to="/produtos" style={{ alignItems: "center", display: "flex" }}>
-                <Box mx={1} style={{ cursor: "pointer" }}>
+              </NavLink>
+              <NavLink 
+                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
+                to="/produtos" 
+                style={{ alignItems: "center", display: "flex" }}>
+                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="inherit">
                     Produtos
                   </Typography>
                 </Box>
-              </Link>
+              </NavLink>
 
               {token !== "" ? (
                 <Box
@@ -85,11 +93,12 @@ function Navbar() {
                   style={{ alignItems: "center", display: "flex" }}
                 >
                   <Box
+                    className="linkNavbar"
                     mx={1}
                     style={{ cursor: "pointer", alignItems: "center" }}
                   >
                     <Typography variant="h6" color="inherit">
-                      logout
+                      Logout
                     </Typography>
                   </Box>
                 </Box>
@@ -99,6 +108,7 @@ function Navbar() {
                   style={{ alignItems: "center", display: "flex" }}
                 >
                   <Box
+                    className="linkNavbar"
                     mx={1}
                     style={{ cursor: "pointer", alignItems: "center" }}
                   >

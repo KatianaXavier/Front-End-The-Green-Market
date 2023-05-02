@@ -45,7 +45,7 @@ function Footer() {
                 gutterBottom
                 style={{ color: "inherit" }}
               >
-                © 2023 Copyright: The Green Market
+                © 2023 Copyright. The Green Market
               </Typography>
             </Box>
           </Box>

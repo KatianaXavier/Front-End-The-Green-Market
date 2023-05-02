@@ -64,7 +64,7 @@ export function CadastroCategoria() {
                 alert('Categoria atualizada com sucesso.')
                 history('/categorias')
             } catch (error) {
-                alert('Erro ao atualizar categoria.')
+                alert('Erro ao editar categoria.')
             }
         } else {
             try {
@@ -92,7 +92,7 @@ export function CadastroCategoria() {
                         fontWeight={'bold'}
                     >
                         
-                        {categoria.idCategoria !== 0 ? 'Atualizar categoria' : 'Cadastrar cagetoria'}
+                        {categoria.idCategoria !== 0 ? 'Editar categoria' : 'Cadastrar cagetoria'}
                     </Typography>
                     <form onSubmit={onSubmit}>
                         <Box display="flex" flexDirection={'column'} gap={2}>
@@ -117,7 +117,7 @@ export function CadastroCategoria() {
                                 variant="contained"
                                 disabled={categoria.descricaoCategoria.length < 3}
                             >
-                                Cadastrar categoria
+                                {categoria.idCategoria !== 0 ? 'Editar categoria' : 'Cadastrar cagetoria'}
                             </Button>
                         </Box>
                     </form>

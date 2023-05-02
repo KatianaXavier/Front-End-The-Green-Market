@@ -1,4 +1,12 @@
-.header a:hover {
+.header .linkNavbar {
+  border-bottom: 3px solid transparent;
+}
+
+.header .linkNavbar:hover {
   transition: filter 0.3s;
   filter: brightness(2);
+}
+
+.isActiveNav {
+  border-bottom: 3px solid #2d5540;
 }

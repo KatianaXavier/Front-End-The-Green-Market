@@ -13,6 +13,7 @@ import { Produto } from "../../../models/Produto";
 import { getAll } from "../../../services/Services";
 import { addToken } from "../../../store/tokens/action";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import './ListaProduto.css'
 
 export function ListaProduto() {
   const dispatch = useDispatch();
@@ -57,21 +58,23 @@ export function ListaProduto() {
           <Box m={4}>
             <Card>
               <CardContent>
-                <Typography gutterBottom component="h2">
-                  Categoria: {produto.categoria?.descricaoCategoria}
+              <Typography variant="h6" component="h2" gutterBottom>
+                  <img alt={`Foto do produto: ${produto.nomeProduto}`} className="imagensProdutos" src={produto.fotoProduto!} />
                 </Typography>
                 <Typography variant="h4" color="textSecondary" gutterBottom>
-                  Nome: {produto.nomeProduto}
+                  {produto.nomeProduto}
+                </Typography>
+                <Typography gutterBottom component="h2">
+                  Categoria: {produto.categoria?.descricaoCategoria}
                 </Typography>
                 <Typography variant="body1" component="h2" gutterBottom>
                   Descrição: {produto.descricaoProduto}
                 </Typography>
                 <Typography variant="h5" component="p" gutterBottom>
-                  Preço: {produto.precoProduto}
+                  {console.log(produto.precoProduto)}
+                  Preço: {`R$ ${(produto.precoProduto).toFixed(2)}`}
                 </Typography>
-                <Typography variant="h6" component="h2" gutterBottom>
-                  Foto: {produto.fotoProduto}
-                </Typography>
+                
               </CardContent>
               <CardActions>
                 <Link to={`/editarProduto/${produto.idProduto}`}>
