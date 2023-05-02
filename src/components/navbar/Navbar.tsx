@@ -10,7 +10,6 @@ import {
 import { Box } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "./../../assets/img/The_Green-Final.png";
-import useLocalStorage from "react-use-localstorage";
 import { useSelector, useDispatch } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { addToken } from "../../store/tokens/action";
@@ -23,7 +22,7 @@ function Navbar() {
   const history = useNavigate();
 
   const back = () => {
-    dispatch(addToken (""));
+    dispatch(addToken(""));
     history("/login");
   };
   return (
@@ -44,79 +43,94 @@ function Navbar() {
             </Link>
 
             <Box display="flex" justifyContent="start">
-              <NavLink
-                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
-                to="/home"
-                style={{ alignItems: "center", display: "flex" }}
-              >
-                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="inherit">
-                    Home
-                  </Typography>
-                </Box>
-              </NavLink>
-              <NavLink
-                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
-                to="/sobre"
-                style={{ alignItems: "center", display: "flex" }}
-              >
-                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="inherit">
-                    Sobre
-                  </Typography>
-                </Box>
-              </NavLink>
-              <NavLink
-                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
-                to="/categorias" 
-                style={{ alignItems: "center", display: "flex" }}>
-                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="inherit">
-                    Categorias
-                  </Typography>
-                </Box>
-              </NavLink>
-              <NavLink 
-                className={({isActive}) => isActive? 'isActiveNav' : 'linkNavbar'}
-                to="/produtos" 
-                style={{ alignItems: "center", display: "flex" }}>
-                <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="inherit">
-                    Produtos
-                  </Typography>
-                </Box>
-              </NavLink>
-
               {token !== "" ? (
-                <Box
-                  onClick={back}
-                  style={{ alignItems: "center", display: "flex" }}
-                >
-                  <Box
-                    className="linkNavbar"
-                    mx={1}
-                    style={{ cursor: "pointer", alignItems: "center" }}
+                <>
+                  <NavLink
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    to="/home"
+                    style={{ alignItems: "center", display: "flex" }}
                   >
-                    <Typography variant="h6" color="inherit">
-                      Logout
-                    </Typography>
+                    <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
+                      <Typography variant="h6" color="inherit">
+                        Home
+                      </Typography>
+                    </Box>
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    to="/categorias"
+                    style={{ alignItems: "center", display: "flex" }}>
+                    <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
+                      <Typography variant="h6" color="inherit">
+                        Categorias
+                      </Typography>
+                    </Box>
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    to="/produtos"
+                    style={{ alignItems: "center", display: "flex" }}>
+                    <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
+                      <Typography variant="h6" color="inherit">
+                        Produtos
+                      </Typography>
+                    </Box>
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    to="/sobre"
+                    style={{ alignItems: "center", display: "flex" }}
+                  >
+                    <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
+                      <Typography variant="h6" color="inherit">
+                        Sobre
+                      </Typography>
+                    </Box>
+                  </NavLink>
+                  <Box
+                    onClick={back}
+                    style={{ alignItems: "center", display: "flex" }}
+                  >
+                    <Box
+                      className="linkNavbar"
+                      mx={1}
+                      style={{ cursor: "pointer", alignItems: "center" }}
+                    >
+                      <Typography variant="h6" color="inherit">
+                        Logout
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
+                </>
               ) : (
-                <Link
-                  to="/login"
-                  style={{ alignItems: "center", display: "flex" }}
-                >
-                  <Box
-                    className="linkNavbar"
-                    mx={1}
-                    style={{ cursor: "pointer", alignItems: "center" }}
+                <>
+                  <NavLink
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    to="/sobre"
+                    style={{ alignItems: "center", display: "flex" }}
                   >
-                    <Typography variant="h6" color="inherit">
-                      Login
-                    </Typography>
-                  </Box>
-                </Link>
+                    <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
+                      <Typography variant="h6" color="inherit">
+                        Sobre
+                      </Typography>
+                    </Box>
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    to="/login"
+                    style={{ alignItems: "center", display: "flex" }}
+                  >
+                    <Box
+                      className="linkNavbar"
+                      mx={1}
+                      style={{ cursor: "pointer", alignItems: "center" }}
+                    >
+                      <Typography variant="h6" color="inherit">
+                        Login
+                      </Typography>
+                    </Box>
+                  </NavLink>
+                </>
               )}
             </Box>
           </Box>
