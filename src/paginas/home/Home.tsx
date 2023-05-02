@@ -6,6 +6,7 @@ import Logo from "./../../assets/img/Dropshipping-model-rafiki.svg";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function Home() {
 
@@ -21,8 +22,16 @@ function Home() {
 
   useEffect(() => {
     if (token === "") {
-      console.log(token);
-      alert("sem token não rola");
+      toast.error("É necessário fazer login.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/login");
     }
   });
