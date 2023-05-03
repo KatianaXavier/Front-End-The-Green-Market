@@ -15,6 +15,7 @@ import { addToken } from "../../../store/tokens/action";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import './ListaProduto.css'
 import { toast } from "react-toastify";
+import { Grid } from "@material-ui/core";
 
 export function ListaProduto() {
   const dispatch = useDispatch();
@@ -58,11 +59,25 @@ export function ListaProduto() {
 
   return (
     <>
-      <Link to={"/criarProduto"}>
-        <Button color="secondary" variant="contained" size="small">
+    <Grid container>
+      <Grid item xs={12}  >
+        <Box display={'flex'} justifyContent={'right'} margin={'15px 40px'}>
+
+        <Link to={"/criarProduto"}>
+        <Button style={{ background: "#2d5540", color: "#fff" }}
+              type="submit"
+              size="large"
+              variant="contained"
+              >
           Cadastrar Produto
         </Button>
       </Link>
+        </Box>
+      
+
+      </Grid>
+    
+
       {produtos.map((produto) => (
         <Box>
           <Box m={4}>
@@ -82,18 +97,18 @@ export function ListaProduto() {
                 </Typography>
                 <Typography variant="h5" component="p" gutterBottom>
                   {console.log(produto.precoProduto)}
-                  Preço: {`R$ ${(produto.precoProduto).toFixed(2)}`}
+                   {`R$ ${(produto.precoProduto).toFixed(2)}`}
                 </Typography>
                 
               </CardContent>
               <CardActions>
                 <Link to={`/editarProduto/${produto.idProduto}`}>
-                  <Button color="primary" variant="contained" size="small">
+                  <Button style={{ background: "#2d5540", color: "#fff" }} variant="contained" size="small">
                     Editar
                   </Button>
                 </Link>
                 <Link to={`/deletarProduto/${produto.idProduto}`}>
-                  <Button color="secondary" variant="contained" size="small">
+                  <Button style={{ background: "#550C18", color: "#fff" }} variant="contained" size="small">
                     Deletar
                   </Button>
                 </Link>
@@ -102,6 +117,10 @@ export function ListaProduto() {
           </Box>
         </Box>
       ))}
+      
+    </Grid>
+      
+      
     </>
   );
 }

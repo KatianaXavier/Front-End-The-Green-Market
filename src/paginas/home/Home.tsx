@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import { Carrossel } from "../../components/carrossel/Carrossel";
 
 function Home() {
 
@@ -38,12 +39,14 @@ function Home() {
 
   return (
     <>
+    
       <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
       >
+        < Carrossel />
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
             <Typography
