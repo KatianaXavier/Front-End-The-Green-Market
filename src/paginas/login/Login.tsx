@@ -44,8 +44,16 @@ function Login() {
     try {
       setIsLoading(true)
       await login("/usuarios/logar", userLogin, setToken);
-
-      alert("Login realizado com sucesso!");
+      toast.success("Login realizado com sucesso!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } catch (error) {
       setIsLoading(false)
       toast.error("Usuário ou senha inválidos.", {

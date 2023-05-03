@@ -13,6 +13,7 @@ import useLocalStorage from "react-use-localstorage";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useStore } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 export function ListaCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -35,7 +36,16 @@ export function ListaCategoria() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Acesso não Autorizado");
+      toast.error("É necessário fazer login.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/login");
     }
   }, []);

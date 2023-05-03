@@ -5,6 +5,7 @@ import { Categoria } from '../../../models/Categoria';
 import { deleteId, getById } from '../../../services/Services';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 export  function DeleteCategoria() {
   const history = useNavigate();
@@ -17,7 +18,16 @@ export  function DeleteCategoria() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Sem Autorização');
+      toast.error("É necessário fazer login.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history('/login');
     } 
   }, []);
@@ -42,7 +52,16 @@ export  function DeleteCategoria() {
         Authorization: token
       }
     })
-    alert('Categoria deletado com sucesso.')
+    toast.success("Categoria deletada com sucesso!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
     history('/categorias')
   }
 

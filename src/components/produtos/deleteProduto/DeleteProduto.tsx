@@ -5,6 +5,7 @@ import { Produto } from "../../../models/Produto";
 import { deleteId, getById } from "../../../services/Services";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 export function DeleteProduto() {
   const history = useNavigate();
@@ -31,7 +32,16 @@ export function DeleteProduto() {
         Authorization: token,
       },
     }).finally(() => {
-      alert("Produto deletado com sucesso.");
+      toast.success("Produto deletado com sucesso!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/produtos");
     });
   }
@@ -42,7 +52,17 @@ export function DeleteProduto() {
 
   useEffect(() => {
     if (token === "") {
-      alert("É necessário estar logado.");
+      toast.error("É necessário fazer login.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+      history("/login");
       history("/login");
     }
   }, [token]);

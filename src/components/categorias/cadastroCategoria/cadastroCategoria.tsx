@@ -5,6 +5,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { Categoria } from "../../../models/Categoria";
 import { getById, post, put } from "../../../services/Services";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { toast } from "react-toastify";
 
 export function CadastroCategoria() {
 
@@ -44,12 +45,21 @@ export function CadastroCategoria() {
         }
     }, [])
 
-    // useEffect(() => {
-    //     if (token === '') {
-    //         alert('É necessário fazer login.')
-    //         history('/login')
-    //     }
-    // }, [])
+     useEffect(() => {
+         if (token === '') {
+             toast.error("É necessário fazer login.", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
+             history('/login')
+         }
+    }, [])
 
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -61,10 +71,28 @@ export function CadastroCategoria() {
                         Authorization: token
                     }
                 })
-                alert('Categoria atualizada com sucesso.')
+                toast.success("Categoria atualizada com sucesso!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
                 history('/categorias')
             } catch (error) {
-                alert('Erro ao editar categoria.')
+                toast.error("Erro ao editar categoria.", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
             }
         } else {
             try {
@@ -73,10 +101,28 @@ export function CadastroCategoria() {
                         Authorization: token
                     },
                 })
-                alert('Categoria cadastrada com sucesso.')
+                toast.success("Categoria cadastrada com sucesso!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
                 history('/categorias')
             } catch (error) {
-                alert('Erro ao cadastrar categoria.')
+                toast.error("Erro ao cadastrar categoria.", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
             }
         }
     }

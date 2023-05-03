@@ -14,6 +14,7 @@ import { getAll } from "../../../services/Services";
 import { addToken } from "../../../store/tokens/action";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import './ListaProduto.css'
+import { toast } from "react-toastify";
 
 export function ListaProduto() {
   const dispatch = useDispatch();
@@ -29,7 +30,16 @@ export function ListaProduto() {
   useEffect(() => {
     if (token === "") {
       dispatch(addToken(token));
-      alert("É necessário estar logado.");
+      toast.error("É necessário fazer login.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history("/login");
     }
   }, [token]);
