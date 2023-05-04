@@ -46,7 +46,6 @@ function Home() {
         justifyContent="center"
         alignItems="center"
       >
-        < Carrossel />
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
             <Typography
@@ -65,7 +64,7 @@ function Home() {
               component="h3"
               align="center"
             >
-              Sua loja verde!
+              Impactar o individual para impactar o todo
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">

@@ -13,12 +13,13 @@ import {
 // import './CadastroPruduto.css';
 
 import { Produto } from "../../../models/Produto";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Categoria } from "../../../models/Categoria";
 import { getAll, getById, put, post } from "../../../services/Services";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import { Box } from "@mui/material";
 
 export function CadastroProduto() {
   const history = useNavigate();
@@ -90,7 +91,7 @@ export function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
         history("/produtos");
       } catch (error) {
         toast.error("Falha ao atualizar o produto.", {
@@ -102,7 +103,7 @@ export function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     } else {
       try {
@@ -120,7 +121,7 @@ export function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
         history("/produtos");
       } catch (error) {
         toast.error("Falha ao cadastrar o produto.", {
@@ -132,7 +133,7 @@ export function CadastroProduto() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     }
   }
@@ -163,7 +164,7 @@ export function CadastroProduto() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       history("/login");
     }
   });
@@ -171,7 +172,8 @@ export function CadastroProduto() {
   return (
     <>
       <Container maxWidth={"sm"}>
-        <form className="cadastroPost" onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
+          <Box display={'flex'} gap={4} flexDirection={'column'}>
           <Typography marginTop={4} variant="h3" align="center">
             {produto.idProduto !== 0 ? 'Editar produto' : 'Cadastrar produto'}
           </Typography>
@@ -180,7 +182,7 @@ export function CadastroProduto() {
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
             }
-            label="Titulo da produto"
+            label="Título do produto"
             name="nomeProduto"
             id="titulo"
             variant="outlined"
@@ -191,7 +193,7 @@ export function CadastroProduto() {
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
             }
-            label="descrição do produto"
+            label="Descrição do produto"
             name="descricaoProduto"
             id="texto"
             variant="outlined"
@@ -261,19 +263,27 @@ export function CadastroProduto() {
               Escolha uma categoria para o produto
             </FormHelperText>
           </FormControl>
+          <Box display={'flex'} gap={4} justifyContent={'center'}>
           <Button
+            style={{ color: '#fff', background: '#2D5540' }}
             variant="contained"
-            color="primary"
+            // color="primary"
             type="submit"
             disabled={categoria.idCategoria === 0}
           >
             {categoria.idCategoria === 0
               ? "Selecione uma categoria"
               : id === undefined
-              ? "Cadastrar"
-              : "Editar"}
-            {/*ver se vai alterar para atualizar ou manter editar*/}
+                ? "Cadastrar"
+                : "Editar"}
           </Button>
+            <Link to={`/produtos`}>
+              <Button style={{ background: "#550C18", color: "#fff" }} variant="contained">
+                Cancelar
+              </Button>
+            </Link>
+          </Box>
+          </Box>
         </form>
       </Container>
     </>

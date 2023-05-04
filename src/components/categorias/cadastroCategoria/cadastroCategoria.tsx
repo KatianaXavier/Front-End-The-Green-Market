@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Categoria } from "../../../models/Categoria";
@@ -45,9 +45,9 @@ export function CadastroCategoria() {
         }
     }, [])
 
-     useEffect(() => {
-         if (token === '') {
-             toast.error("É necessário fazer login.", {
+    useEffect(() => {
+        if (token === '') {
+            toast.error("É necessário fazer login.", {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -56,9 +56,9 @@ export function CadastroCategoria() {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-                });
-             history('/login')
-         }
+            });
+            history('/login')
+        }
     }, [])
 
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
@@ -80,7 +80,7 @@ export function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
                 history('/categorias')
             } catch (error) {
                 toast.error("Erro ao editar categoria.", {
@@ -92,7 +92,7 @@ export function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
             }
         } else {
             try {
@@ -110,7 +110,7 @@ export function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
                 history('/categorias')
             } catch (error) {
                 toast.error("Erro ao cadastrar categoria.", {
@@ -122,7 +122,7 @@ export function CadastroCategoria() {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
             }
         }
     }
@@ -137,8 +137,8 @@ export function CadastroCategoria() {
                         gutterBottom
                         fontWeight={'bold'}
                     >
-                        
-                        {categoria.idCategoria !== 0 ? 'Editar categoria' : 'Cadastrar cagetoria'}
+
+                        {categoria.idCategoria !== 0 ? 'Editar categoria' : 'Cadastrar categoria'}
                     </Typography>
                     <form onSubmit={onSubmit}>
                         <Box display="flex" flexDirection={'column'} gap={2}>
@@ -158,13 +158,22 @@ export function CadastroCategoria() {
                                     updateModel(event)
                                 }
                             />
-                            <Button
-                                type="submit"
-                                variant="contained"
-                                disabled={categoria.descricaoCategoria.length < 3}
-                            >
-                                {categoria.idCategoria !== 0 ? 'Editar categoria' : 'Cadastrar cagetoria'}
-                            </Button>
+                            <Box display={'flex'} gap={4} justifyContent={'center'}>
+                                <Button
+                                    style={{ color: '#fff', background: '#2D5540' }}
+                                    variant="contained"
+                                    // color="primary"
+                                    type="submit"
+                                    disabled={categoria.descricaoCategoria.length < 3}
+                                >
+                                    {categoria.idCategoria !== 0 ? 'Editar categoria' : 'Cadastrar categoria'}
+                                </Button>
+                                <Link to={`/categorias`}>
+                                    <Button style={{ background: "#550C18", color: "#fff" }} variant="contained">
+                                        Cancelar
+                                    </Button>
+                                </Link>
+                            </Box>
                         </Box>
                     </form>
                 </Grid>

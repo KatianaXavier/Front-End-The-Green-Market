@@ -97,7 +97,7 @@ export function ListaProduto() {
                 </Typography>
                 <Typography variant="h5" component="p" gutterBottom>
                   {console.log(produto.precoProduto)}
-                   {`R$ ${(produto.precoProduto).toFixed(2)}`}
+                  {`R$ ${(produto.precoProduto).toFixed(2)}`}
                 </Typography>
                 
               </CardContent>

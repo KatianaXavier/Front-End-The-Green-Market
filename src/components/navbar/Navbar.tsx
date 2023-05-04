@@ -46,7 +46,7 @@ function Navbar() {
               {token !== "" ? (
                 <>
                   <NavLink
-                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbarBorder'}
                     to="/home"
                     style={{ alignItems: "center", display: "flex" }}
                   >
@@ -57,7 +57,7 @@ function Navbar() {
                     </Box>
                   </NavLink>
                   <NavLink
-                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbarBorder'}
                     to="/categorias"
                     style={{ alignItems: "center", display: "flex" }}>
                     <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
@@ -67,7 +67,7 @@ function Navbar() {
                     </Box>
                   </NavLink>
                   <NavLink
-                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbarBorder'}
                     to="/produtos"
                     style={{ alignItems: "center", display: "flex" }}>
                     <Box mx={1} className="linkNavbar" style={{ cursor: "pointer" }}>
@@ -77,7 +77,7 @@ function Navbar() {
                     </Box>
                   </NavLink>
                   <NavLink
-                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbarBorder'}
                     to="/sobre"
                     style={{ alignItems: "center", display: "flex" }}
                   >
@@ -90,6 +90,7 @@ function Navbar() {
                   <Box
                     onClick={back}
                     style={{ alignItems: "center", display: "flex" }}
+                    className="linkNavbarBorder"
                   >
                     <Box
                       className="linkNavbar"
@@ -97,7 +98,7 @@ function Navbar() {
                       style={{ cursor: "pointer", alignItems: "center" }}
                     >
                       <Typography variant="h6" color="inherit">
-                        Logout
+                        Sair
                       </Typography>
                     </Box>
                   </Box>
@@ -105,7 +106,7 @@ function Navbar() {
               ) : (
                 <>
                   <NavLink
-                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbarBorder'}
                     to="/sobre"
                     style={{ alignItems: "center", display: "flex" }}
                   >
@@ -116,7 +117,7 @@ function Navbar() {
                     </Box>
                   </NavLink>
                   <NavLink
-                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbar'}
+                    className={({ isActive }) => isActive ? 'isActiveNav' : 'linkNavbarBorder'}
                     to="/login"
                     style={{ alignItems: "center", display: "flex" }}
                   >

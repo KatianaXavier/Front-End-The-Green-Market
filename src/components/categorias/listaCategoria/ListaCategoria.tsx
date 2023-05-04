@@ -56,7 +56,7 @@ export function ListaCategoria() {
       <Grid container>
         <Grid item xs={12}>
           <Box display={"flex"} justifyContent={"right"} margin={"15px 40px"}>
-            <Link to={"/criarProduto"}>
+            <Link to={"/criarCategoria"}>
               <Button
                 style={{ background: "#2d5540", color: "#fff" }}
                 type="submit"
