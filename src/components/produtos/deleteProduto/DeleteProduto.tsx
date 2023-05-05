@@ -77,19 +77,20 @@ export function DeleteProduto() {
     <>
       <Grid container justifyContent={"center"} mt={4}>
         <Grid item xs={4}>
-          <Card variant="outlined">
+          <Card variant='elevation' style={{ boxSizing: 'content-box', boxShadow: '10px 6px 20px 2px rgba(0, 0, 0, 0.2)', borderRadius:'11px 11px 11px 11px', marginBottom: '30px' }} >
+            <Box padding={4} display="flex" flexDirection={"column"} gap={2}>
             <Typography variant="h3" gutterBottom align="center">
               Deletar Produto
             </Typography>
-            <Typography variant="body1" gutterBottom align="center">
-              Você tem certeza de que deseja deletar o produto com nome: <br />{" "}
+            <Typography variant="h5" gutterBottom align="justify">
+              Você tem certeza de que deseja deletar o produto: {" "}
               <strong>{produto?.nomeProduto}</strong>{" "}
             </Typography>
 
-            <Box display="flex">
+            <Box display="flex" gap={4}>
               <Button
                 variant="contained"
-                color="primary"
+                style={{ background: "#2d5540", color: "#fff" }}
                 onClick={voltar}
                 fullWidth
               >
@@ -97,12 +98,13 @@ export function DeleteProduto() {
               </Button>
               <Button
                 variant="contained"
-                color="error"
+                style={{ background: "#550C18", color: "#fff" }}
                 onClick={deletarProduto}
                 fullWidth
               >
                 Sim
               </Button>
+            </Box>
             </Box>
           </Card>
         </Grid>

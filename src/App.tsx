@@ -35,7 +35,7 @@ function App() {
 					theme="colored"
 				/>
 				<Navbar />
-				<div>
+				<div style={{minHeight:'100vh'}}>
 					<Routes>
 						<Route path="/" element={<Login />} />
 						<Route path="/home" element={<Home />} />
