@@ -40,7 +40,7 @@ export function ListaProduto() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       history("/login");
     }
   }, [token]);
@@ -59,68 +59,62 @@ export function ListaProduto() {
 
   return (
     <>
-    <Grid container>
-      <Grid item xs={12}  >
-        <Box display={'flex'} justifyContent={'right'} margin={'15px 40px'}>
+      <Grid container>
+        <Grid item xs={12}>
+          <Box display={'flex'} justifyContent={'right'} margin={'15px 40px'}>
 
-        <Link to={"/criarProduto"}>
-        <Button style={{ background: "#2d5540", color: "#fff" }}
-              type="submit"
-              size="large"
-              variant="contained"
+            <Link to={"/criarProduto"}>
+              <Button style={{ background: "#2d5540", color: "#fff" }}
+                type="submit"
+                size="large"
+                variant="contained"
               >
-          Cadastrar Produto
-        </Button>
-      </Link>
-        </Box>
-      
-
-      </Grid>
-    
-
-      {produtos.map((produto) => (
-        <Box>
-          <Box m={4}>
-            <Card>
-              <CardContent>
-              <Typography variant="h6" component="h2" gutterBottom>
-                  <img alt={`Foto do produto: ${produto.nomeProduto}`} className="imagensProdutos" src={produto.fotoProduto!} />
-                </Typography>
-                <Typography variant="h4" color="textSecondary" gutterBottom>
-                  {produto.nomeProduto}
-                </Typography>
-                <Typography gutterBottom component="h2">
-                  Categoria: {produto.categoria?.descricaoCategoria}
-                </Typography>
-                <Typography variant="body1" component="h2" gutterBottom>
-                  Descrição: {produto.descricaoProduto}
-                </Typography>
-                <Typography variant="h5" component="p" gutterBottom>
-                  {console.log(produto.precoProduto)}
-                  {`R$ ${(produto.precoProduto).toFixed(2)}`}
-                </Typography>
-                
-              </CardContent>
-              <CardActions>
-                <Link to={`/editarProduto/${produto.idProduto}`}>
-                  <Button style={{ background: "#2d5540", color: "#fff" }} variant="contained" size="small">
-                    Editar
-                  </Button>
-                </Link>
-                <Link to={`/deletarProduto/${produto.idProduto}`}>
-                  <Button style={{ background: "#550C18", color: "#fff" }} variant="contained" size="small">
-                    Deletar
-                  </Button>
-                </Link>
-              </CardActions>
-            </Card>
+                Cadastrar Produto
+              </Button>
+            </Link>
           </Box>
-        </Box>
-      ))}
-      
-    </Grid>
-      
-      
+        </Grid>
+        <Grid item xs={12}>
+          <Box display={'flex'} flexWrap={'wrap'}>
+            {produtos.map((produto) => (
+              <Box m={4}>
+                <Card style={{ height: '570px'}} sx={{maxWidth: 400}}>
+                  <CardContent style={{ height: '90%' }}>
+                    <Box width={'100%'} height={'45%'}>
+                      <img alt={`Foto do produto: ${produto.nomeProduto}`} className="imagensProdutos" src={produto.fotoProduto!} />
+                    </Box>
+                    <Typography variant="h5" gutterBottom>
+                      <strong>{produto.nomeProduto}</strong>
+                    </Typography>
+                    <Typography gutterBottom component="h2">
+                      Categoria: {produto.categoria?.descricaoCategoria}
+                    </Typography>
+                    <Typography variant="body1" component="h2" gutterBottom textAlign={'justify'} height={'100px'}>
+                      Descrição: {produto.descricaoProduto}
+                    </Typography>
+                    <Typography variant="h5" component="p" gutterBottom>
+                      {console.log(produto.precoProduto)}
+                      {`R$ ${(produto.precoProduto).toFixed(2)}`}
+                    </Typography>
+                  </CardContent>
+                  <CardActions style={{ border: '1px solid red ' }}>
+                    <Link to={`/editarProduto/${produto.idProduto}`}>
+                      <Button style={{ background: "#2d5540", color: "#fff" }} variant="contained" size="small">
+                        Editar
+                      </Button>
+                    </Link>
+                    <Link to={`/deletarProduto/${produto.idProduto}`}>
+                      <Button style={{ background: "#550C18", color: "#fff" }} variant="contained" size="small">
+                        Deletar
+                      </Button>
+                    </Link>
+                  </CardActions>
+                </Card>
+              </Box>
+            ))}
+          </Box>
+        </Grid>
+      </Grid>
     </>
   );
 }
