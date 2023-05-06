@@ -2,3 +2,7 @@
     height: 100%;
     margin: auto;
 }
+
+.alinhamentoCards {
+    justify-content: space-evenly;
+}

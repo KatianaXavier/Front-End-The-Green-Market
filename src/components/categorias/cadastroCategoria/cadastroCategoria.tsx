@@ -135,9 +135,7 @@ export function CadastroCategoria() {
                         align="center"
                         variant="h3"
                         gutterBottom
-                        fontWeight={'bold'}
                     >
-
                         {categoria.idCategoria !== 0 ? 'Editar categoria' : 'Cadastrar categoria'}
                     </Typography>
                     <form onSubmit={onSubmit}>
