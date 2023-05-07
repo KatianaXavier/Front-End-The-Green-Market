@@ -201,7 +201,8 @@ export function CadastroProduto() {
             multiline
             minRows={4}
           />
-          <TextField
+          <Box gap= "10px" display= "flex"><TextField
+            style={{flex: 1}}
             type="number"
             value={produto.qtdProduto}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -211,11 +212,9 @@ export function CadastroProduto() {
             name="qtdProduto"
             id="texto"
             variant="outlined"
-            fullWidth
-            multiline
-            minRows={4}
           />
           <TextField
+            style={{flex: 1}}
             type="number"
             value={produto.precoProduto}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -225,22 +224,17 @@ export function CadastroProduto() {
             name="precoProduto"
             id="texto"
             variant="outlined"
-            fullWidth
-            multiline
-            minRows={4}
-          />
+          /></Box>
           <TextField
             value={produto.fotoProduto}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
             }
-            label="Foto do produto"
+            label="Foto do produto (URL)"
             name="fotoProduto"
             id="texto"
             variant="outlined"
             fullWidth
-            multiline
-            minRows={4}
           />
 
           <FormControl>

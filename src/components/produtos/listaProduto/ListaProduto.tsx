@@ -86,11 +86,11 @@ export function ListaProduto() {
                     <Typography variant="h5" gutterBottom textAlign={'center'}>
                       <strong>{produto.nomeProduto}</strong>
                     </Typography>
-                    <Typography gutterBottom component="h2">
-                      Categoria: {produto.categoria?.descricaoCategoria}
-                    </Typography>
-                    <Typography variant="body1" component="h2" gutterBottom textAlign={'justify'} height={'100px'}>
+                    <Typography className="descricaoProduto" variant="body1" component="h2" gutterBottom textAlign={'justify'} height={'100px'}>
                       {produto.descricaoProduto}
+                    </Typography>
+                    <Typography margin="10px 0" fontSize={18}  gutterBottom component="h2">
+                       <strong>Categoria:</strong> {produto.categoria?.descricaoCategoria}
                     </Typography>
                     <Typography variant="h5" component="p" gutterBottom>
                       {console.log(produto.precoProduto)}

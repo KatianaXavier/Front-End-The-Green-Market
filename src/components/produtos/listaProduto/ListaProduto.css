@@ -6,3 +6,24 @@
 .alinhamentoCards {
     justify-content: space-evenly;
 }
+
+.descricaoProduto {
+    padding-right: 10px;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+}
+
+.descricaoProduto::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .descricaoProduto::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .descricaoProduto::-webkit-scrollbar-thumb {
+    background-color:  rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }

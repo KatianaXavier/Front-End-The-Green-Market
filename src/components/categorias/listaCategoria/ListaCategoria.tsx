@@ -7,6 +7,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import "./ListaCategoria.css"
 import { useEffect, useState } from "react";
 import { Categoria } from "../../../models/Categoria";
 import { getAll } from "../../../services/Services";
@@ -76,18 +77,15 @@ export function ListaCategoria() {
         )}
 
         <Grid item xs={12}>
-          <Box display={'flex'} flexWrap={'wrap'} gap={4} margin={'0px 20px 20px 20px'} className="alinhamentoCardsCategoria">
+          <Box  display={'flex'} flexWrap={'wrap'} gap={4} margin={'0px 20px 20px 20px'} className="alinhamentoCardsCategoria">
             {categorias.map((categoria) => (
               <Box m={4}>
-              <Card variant="outlined" className="cardCategoria" style={{ display:'flex', flexDirection:'column', height: '220px', boxShadow: '0px 1px 19px 6px rgba(194,194,194,1)', borderRadius:'11px 11px 11px 11px'}} sx={{width: 350}}>
-                <CardContent style={{ flex: 1 }}>
-                  <Typography color="textSecondary" gutterBottom>
-                    Categoria:
-                  </Typography>
+              <Card  variant="outlined" className="cardCategoria" style={{ display:'flex', flexDirection:'column', height: '250px', boxShadow: '0px 1px 19px 6px rgba(194,194,194,1)', borderRadius:'11px 11px 11px 11px', padding:"20px" }} sx={{width: 350}}>
+                <CardContent style={{ flex: 1, display: "flex", flexDirection: "column"}}>
                   <Typography variant="h5" component="h2">
                     {categoria.nomeCategoria}
                   </Typography>
-                  <Typography variant="h6" component="h6">
+                  <Typography flex={1} className="descricaoCategoria" variant="h6" component="h6">
                     {categoria.descricaoCategoria}
                   </Typography>
                 </CardContent>
