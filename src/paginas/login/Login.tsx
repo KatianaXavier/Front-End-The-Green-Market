@@ -112,7 +112,7 @@ function Login() {
 								updateModel(event)
 							}
 							id="senha"
-							label="senha"
+							label="Senha"
 							variant="outlined"
 							name="senhaUsuario"
 							margin="normal"
@@ -139,7 +139,7 @@ function Login() {
 							<Typography variant="subtitle1" gutterBottom align="center">
 								Não tem uma conta?{" "}
 								<Link
-									style={{ color: "#2d5540ff", textDecoration: "underline" }}
+									style={{ color: "#2d5540ff", textDecoration: "underline", fontWeight:'bold' }}
 									to="/cadastro"
 								>
 									Cadastre-se

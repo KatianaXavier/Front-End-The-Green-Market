@@ -1,8 +1,9 @@
 import React from "react";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { Typography, Grid } from "@material-ui/core";
-import { Box } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
+import './Footer.css'
 
 function Footer() {
   return (
@@ -19,7 +20,7 @@ function Footer() {
               backgroundColor: "#f4f0e2",
               height: "",
               color: "#2d5540",
-              paddingTop: "30px",
+              paddingTop: "15px",
             }}
           >
             <Box display="flex" alignItems="center" justifyContent="center">
@@ -27,7 +28,17 @@ function Footer() {
                 href="https://github.com/ProjetoTheGreenMarket"
                 target="_blank"
               >
-                <GitHub style={{ fontSize: 40, color: "inherit" }} />
+                <GitHub style={{ fontSize: 28, color: "inherit" }} />
+              </a>
+              <a
+                href='https://linktr.ee/ProjetoTheGreenMarket'
+                target="_blank"
+              >
+              <img
+                alt="Logo Linktree"
+                src="https://s3-eu-west-1.amazonaws.com/tpd/logos/5e17348b35cb550001414082/0x0.png"
+                style={{ width: 42, height: 42, marginLeft: 8, marginBottom: 4, color: '#2d5540' }}
+              />
               </a>
             </Box>
           </Box>
@@ -35,14 +46,13 @@ function Footer() {
             style={{
               backgroundColor: "#f4f0e2",
               height: "",
-              paddingBottom: "30px",
+              paddingBottom: "12px",
             }}
           >
-            <Box paddingTop={1}>
+            <Box paddingTop={0.2}>
               <Typography
                 variant="subtitle2"
                 align="center"
-                gutterBottom
                 style={{ color: "inherit" }}
               >
                 © 2023 Copyright. The Green Market

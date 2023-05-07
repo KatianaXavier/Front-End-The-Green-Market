@@ -189,6 +189,14 @@ export function CadastroProduto() {
             fullWidth
           />
           <TextField
+            error={
+              produto.descricaoProduto.length > 255
+            }
+            helperText={
+              produto.descricaoProduto.length > 255
+                ? "A descrição deve ter no máximo 255 caracteres"
+                : ""
+            }
             value={produto.descricaoProduto}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
@@ -249,7 +257,7 @@ export function CadastroProduto() {
             >
               {categorias.map((categoria) => (
                 <MenuItem value={categoria.idCategoria}>
-                  {categoria.descricaoCategoria}
+                  {categoria.nomeCategoria}
                 </MenuItem>
               ))}
             </Select>

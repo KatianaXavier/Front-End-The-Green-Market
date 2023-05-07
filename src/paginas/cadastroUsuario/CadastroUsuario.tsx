@@ -147,7 +147,7 @@ export const CadastroUsuario = () => {
 									onChange={(event: ChangeEvent<HTMLInputElement>) =>
 										updateModel(event)
 									}
-									label="CPF (Valido)"
+									label="CPF (Válido e apenas números)"
 									margin="normal"
 									required
 									fullWidth
@@ -171,7 +171,7 @@ export const CadastroUsuario = () => {
 									onChange={(event: ChangeEvent<HTMLInputElement>) =>
 										updateModel(event)
 									}
-									label="Telefone"
+									label="Telefone (apenas números)"
 									margin="normal"
 									required
 									type="tel"
@@ -184,7 +184,7 @@ export const CadastroUsuario = () => {
 									onChange={(event: ChangeEvent<HTMLInputElement>) =>
 										updateModel(event)
 									}
-									label="CEP (Valido)"
+									label="CEP (Válido e apenas números)"
 									margin="normal"
 									required
 									type="text"
@@ -211,7 +211,7 @@ export const CadastroUsuario = () => {
 									helperText={
 										usuario.senhaUsuario.length < 8 &&
 										usuario.senhaUsuario.length > 0
-											? "Senha tem que ter no minimo 8 caracteres"
+											? "A senha deve ter no mínimo 8 caracteres"
 											: ""
 									}
 									type="password"
@@ -229,7 +229,7 @@ export const CadastroUsuario = () => {
 									error={usuario.senhaUsuario !== confirmarSenha}
 									helperText={
 										usuario.senhaUsuario !== confirmarSenha
-											? "Senha diferente"
+											? "As senhas são diferentes"
 											: ""
 									}
 									type="password"

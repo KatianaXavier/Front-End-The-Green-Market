@@ -78,7 +78,7 @@ export function ListaProduto() {
           <Box display={'flex'} flexWrap={'wrap'} className="alinhamentoCards" >
             {produtos.map((produto) => (
               <Box m={4}>
-                <Card style={{ height: '570px', boxShadow: ' 0px 1px 19px 6px rgba(194,194,194,1)', borderRadius:'11px 11px 11px 11px'}} sx={{maxWidth: 350}} >
+                <Card style={{ height: '570px', boxShadow: ' 0px 1px 19px 6px rgba(194,194,194,1)', borderRadius: '11px 11px 11px 11px' }} sx={{ maxWidth: 350 }} >
                   <CardContent style={{ height: '90%' }}>
                     <Box width={'100%'} height={'45%'}>
                       <img alt={`Foto do produto: ${produto.nomeProduto}`} className="imagensProdutos" src={produto.fotoProduto!} />
@@ -89,22 +89,22 @@ export function ListaProduto() {
                     <Typography className="descricaoProduto" variant="body1" component="h2" gutterBottom textAlign={'justify'} height={'100px'}>
                       {produto.descricaoProduto}
                     </Typography>
-                    <Typography margin="10px 0" fontSize={18}  gutterBottom component="h2">
-                       <strong>Categoria:</strong> {produto.categoria?.descricaoCategoria}
+                    <Typography margin="10px 0" fontSize={18} gutterBottom component="h2">
+                      <strong>Categoria:</strong> {produto.categoria?.descricaoCategoria}
                     </Typography>
                     <Typography variant="h5" component="p" gutterBottom>
                       {console.log(produto.precoProduto)}
                       {`R$ ${(produto.precoProduto).toFixed(2)}`}
                     </Typography>
                   </CardContent>
-                  <CardActions style={{ display: 'flex', justifyContent:'center', gap:'20px' }}>
+                  <CardActions style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
                     <Link to={`/editarProduto/${produto.idProduto}`} style={{ flex: '1' }}>
-                      <Button style={{ background: "#2d5540", color: "#fff", width:'100%' }} variant="contained" size="small">
+                      <Button style={{ background: "#2d5540", color: "#fff", width: '100%' }} variant="contained" size="small">
                         Editar
                       </Button>
                     </Link>
                     <Link to={`/deletarProduto/${produto.idProduto}`} style={{ flex: '1' }}>
-                      <Button style={{ background: "#550C18", color: "#fff", width:'100%' }} variant="contained" size="small">
+                      <Button style={{ background: "#550C18", color: "#fff", width: '100%' }} variant="contained" size="small">
                         Deletar
                       </Button>
                     </Link>

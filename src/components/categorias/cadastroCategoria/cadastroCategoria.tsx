@@ -149,6 +149,14 @@ export function CadastroCategoria() {
                                 }
                             />
                             <TextField
+                                error={
+                                    categoria.descricaoCategoria.length > 150
+                                }
+                                helperText={
+                                    categoria.descricaoCategoria.length > 150
+                                        ? "A descrição deve ter no máximo 150 caracteres"
+                                        : ""
+                                }
                                 label="Descrição da categoria"
                                 name="descricaoCategoria"
                                 value={categoria.descricaoCategoria}

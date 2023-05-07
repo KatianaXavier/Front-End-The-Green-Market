@@ -15,7 +15,7 @@ function Home() {
 
   const history = useNavigate();
 
-  function produtos(){
+  function produtos() {
     history('/produtos')
   }
 
@@ -34,20 +34,20 @@ function Home() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       history("/login");
     }
   });
 
   return (
     <>
-    <Box >
-      <Box justifyContent='center'><Carrossel /></Box>
-      <h1 className='sub_titulo'>
-         Nossos Produtos!
-      </h1>
+      <Box >
+        <Box justifyContent='center'><Carrossel /></Box>
+        <h1 className='sub_titulo'>
+          Nossos produtos
+        </h1>
       </Box>
-        <ListaProduto />
+      <ListaProduto />
       <Grid
         container
         direction="row"
