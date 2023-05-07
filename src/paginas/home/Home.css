@@ -1,6 +1,18 @@
-.buttonHome {
-}
+
 .buttonHome:hover {
   transition: filter 0.3s;
   filter: brightness(2);
 }
+
+
+
+.sub_titulo{
+  margin-top: 15px;
+  color: #0F2B1E;
+  font-size: 32px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #F4F0E2;
+}
+
+

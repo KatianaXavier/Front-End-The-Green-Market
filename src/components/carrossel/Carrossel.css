@@ -1,0 +1,39 @@
+.img1{
+    
+    height: 65vh;
+    background-image: url(https://i.imgur.com/NW22fWK.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.img2{
+    height: 65vh;
+    background-image: url(https://i.imgur.com/foWIVsO.jpg);
+    background-size: cover;
+   
+}
+
+.img3{
+    height: 65vh;
+    background-image: url(https://i.imgur.com/Y8DXhYA.jpg);
+    background-size: cover;
+    
+
+}
+
+
+.img4{
+    height: 65vh;
+    background-image: url(https://i.imgur.com/MdD3uj0.jpg);
+    background-size: cover;
+    
+}
+
+.img5{
+    height: 65vh;
+    background-image: url(https://i.imgur.com/yLXYGtk.jpg);
+    background-size: cover;
+}
+
+
+

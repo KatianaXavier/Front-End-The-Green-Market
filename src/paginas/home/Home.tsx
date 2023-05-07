@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import { Carrossel } from "../../components/carrossel/Carrossel";
+import { ListaProduto } from "../../components/produtos/listaProduto/ListaProduto";
+
 
 function Home() {
 
@@ -39,7 +41,13 @@ function Home() {
 
   return (
     <>
-    
+    <Box >
+      <Box justifyContent='center'><Carrossel /></Box>
+      <h1 className='sub_titulo'>
+         Nossos Produtos!
+      </h1>
+      </Box>
+        <ListaProduto />
       <Grid
         container
         direction="row"
