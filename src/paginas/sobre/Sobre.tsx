@@ -66,10 +66,10 @@ function Sobre() {
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
-                style={{ minHeight: "80vh" }}
+                style={{ paddingBottom:"40px" }}
             >
                 <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={20} paddingY={10}>
+                    <Box padding="60px 0 0 160px">
                         <Typography
                             variant="h6"
                             gutterBottom
@@ -96,7 +96,7 @@ function Sobre() {
                     </Box>
                 </Grid>
                 <Grid item xs={6} style={{ padding: "30px 0 30px 0" }}>
-                    <img src={LogoHome} alt="Logo do home" />
+                   <Box display="flex" justifyContent="center" width="100%"><img width="500px" src={LogoHome} alt="Logo do home" /></Box> 
                 </Grid>
                 <Grid xs={12}></Grid>
             </Grid>

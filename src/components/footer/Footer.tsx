@@ -38,7 +38,7 @@ function Footer() {
               <img
                 alt="Logo Linktree"
                 src={LinkThreeLogo}
-                style={{ width: 42, height: 42, marginLeft: 8, marginBottom: 4, color: '#2d5540' }}
+                style={{ width: 28, height: 28, marginLeft: 8, marginBottom: 4, color: '#2d5540' }}
               />
               </a>
             </Box>
