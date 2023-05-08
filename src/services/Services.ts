@@ -5,10 +5,9 @@ export const api = axios.create({
 });
 
 export const login = async (url: string, dados: object, setDados: Function) => {
-  const resposta = await api.post(url, dados);
-  console.log(resposta.data.token);
-  setDados(resposta.data.token);
-};
+  const resposta = await api.post(url, dados)
+  setDados(resposta.data)
+  }
 
 export const cadastrarUsuario = async (
   url: string,

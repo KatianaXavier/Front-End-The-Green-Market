@@ -20,9 +20,14 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import { Box } from "@mui/material";
+import { User } from "../../../models/User"
 
 export function CadastroProduto() {
   const history = useNavigate();
+
+  const userId = useSelector<TokenState, TokenState["id"]>(
+    (state) => state.id
+  );
 
   const token = useSelector<TokenState, TokenState["token"]>(
     (state) => state.token
@@ -30,6 +35,18 @@ export function CadastroProduto() {
   const { id } = useParams<{ id: string }>();
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
+
+  const [usuario, setUsuario] = useState<User>({
+    idUsuario: +userId,
+		nomeUsuario: "",
+		cpfUsuario: "",
+		enderecoUsuario: "",
+		telefoneUsuario: "",
+		cepUsuario: "",
+		usuario: "",
+		fotoUsuario: "",
+		senhaUsuario: ""
+  })
 
   const [produto, setProduto] = useState<Produto>({
     idProduto: 0,
@@ -149,6 +166,7 @@ export function CadastroProduto() {
     setProduto({
       ...produto,
       categoria: categoria,
+      usuario: usuario
     });
   }, [categoria]);
 

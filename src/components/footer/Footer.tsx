@@ -1,8 +1,8 @@
 import React from "react";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { Typography, Grid } from "@material-ui/core";
 import { Avatar, Box } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
+import LinkThreeLogo from '../../assets/img/linktree-logo-icon.svg'
 import './Footer.css'
 
 function Footer() {
@@ -31,12 +31,13 @@ function Footer() {
                 <GitHub style={{ fontSize: 28, color: "inherit" }} />
               </a>
               <a
+                style={{color: '#2d5540' }}
                 href='https://linktr.ee/ProjetoTheGreenMarket'
                 target="_blank"
               >
               <img
                 alt="Logo Linktree"
-                src="https://s3-eu-west-1.amazonaws.com/tpd/logos/5e17348b35cb550001414082/0x0.png"
+                src={LinkThreeLogo}
                 style={{ width: 42, height: 42, marginLeft: 8, marginBottom: 4, color: '#2d5540' }}
               />
               </a>

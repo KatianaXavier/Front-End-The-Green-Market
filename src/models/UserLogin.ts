@@ -8,5 +8,5 @@ export interface UserLogin {
  usuario: string;
  fotoUsuario?: string | null;
  senhaUsuario: string;
- token?: string | null;
+ token: string;
 }

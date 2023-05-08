@@ -16,12 +16,17 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import './ListaProduto.css'
 import { toast } from "react-toastify";
 import { Grid } from "@material-ui/core";
+import { UserLogin } from "../../../models/UserLogin";
 
 export function ListaProduto() {
   const dispatch = useDispatch();
 
   const token = useSelector<TokenState, TokenState["token"]>(
     (state) => state.token
+  );
+
+  const id = useSelector<TokenState, TokenState["id"]>(
+    (state) => state.id
   );
 
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -93,22 +98,27 @@ export function ListaProduto() {
                       <strong>Categoria:</strong> {produto.categoria?.descricaoCategoria}
                     </Typography>
                     <Typography variant="h5" component="p" gutterBottom>
-                      {console.log(produto.precoProduto)}
                       {`R$ ${(produto.precoProduto).toFixed(2)}`}
                     </Typography>
                   </CardContent>
-                  <CardActions style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-                    <Link to={`/editarProduto/${produto.idProduto}`} style={{ flex: '1' }}>
-                      <Button style={{ background: "#2d5540", color: "#fff", width: '100%' }} variant="contained" size="small">
-                        Editar
-                      </Button>
-                    </Link>
-                    <Link to={`/deletarProduto/${produto.idProduto}`} style={{ flex: '1' }}>
-                      <Button style={{ background: "#550C18", color: "#fff", width: '100%' }} variant="contained" size="small">
-                        Deletar
-                      </Button>
-                    </Link>
-                  </CardActions>
+                  {produto.usuario?.idUsuario.toString() === id && (
+                    <CardActions style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+                      <Link to={`/editarProduto/${produto.idProduto}`} style={{ flex: '1' }}>
+                        <Button style={{ background: "#2d5540", color: "#fff", width: '100%' }} variant="contained" size="small">
+                          Editar
+                        </Button>
+                      </Link>
+                      <Link to={`/deletarProduto/${produto.idProduto}`} style={{ flex: '1' }}>
+                        <Button style={{ background: "#550C18", color: "#fff", width: '100%' }} variant="contained" size="small">
+                          Deletar
+                        </Button>
+                      </Link>
+                    </CardActions>
+                  )}
+                  <CardContent>
+                    <Typography variant="h5" component="h2">
+                    </Typography>
+                  </CardContent>
                 </Card>
               </Box>
             ))}

@@ -8,6 +8,6 @@ export interface Produto {
   qtdProduto: number;
   precoProduto: number;
   fotoProduto?: string | null;
-  categoria: Categoria | null;
+  categoria?: Categoria | null;
   usuario?: User | null;
 }
