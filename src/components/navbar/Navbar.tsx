@@ -138,7 +138,9 @@ useEffect(() => {
                         Sair
                       </Typography>
                     </Box>
-                    
+                    {
+                      console.log(usuario)
+                    }
                     <Avatar src={usuario.fotoUsuario} style={{ width: '3rem', height: '3rem', margin: '0 auto' }} />
                   </Box>
                 </>

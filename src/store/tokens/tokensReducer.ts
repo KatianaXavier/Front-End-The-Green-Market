@@ -22,6 +22,7 @@ export const tokenReducer = (
         case "ADD_ID": {
             return {id: action.payload, token: state.token}
         }
+      
 
         default:
             return state
