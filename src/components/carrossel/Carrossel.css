@@ -15,7 +15,7 @@
 
 .img3 {
     height: 65vh;
-    background-image: url(https://i.imgur.com/Y8DXhYA.jpg);
+    background-image: url(https://i.imgur.com/mFlcD4E.jpg);
     background-size: cover;
 
 
@@ -24,7 +24,7 @@
 
 .img4 {
     height: 65vh;
-    background-image: url(https://i.imgur.com/MdD3uj0.jpg);
+    background-image: url(https://i.imgur.com/PfJcsTw.jpg);
     background-size: cover;
 
 }
@@ -32,5 +32,10 @@
 .img5 {
     height: 65vh;
     background-image: url(https://i.imgur.com/yLXYGtk.jpg);
+    background-size: cover;
+}
+.img6 {
+    height: 65vh;
+    background-image: url(https://i.imgur.com/GaMOBQd.jpg);
     background-size: cover;
 }

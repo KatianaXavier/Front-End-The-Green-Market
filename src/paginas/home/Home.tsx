@@ -10,13 +10,11 @@ import { toast } from "react-toastify";
 import { Carrossel } from "../../components/carrossel/Carrossel";
 import { ListaProduto } from "../../components/produtos/listaProduto/ListaProduto";
 
-
 function Home() {
-
   const history = useNavigate();
 
   function produtos() {
-    history('/produtos')
+    history("/produtos");
   }
 
   const token = useSelector<TokenState, TokenState["token"]>(
@@ -41,59 +39,14 @@ function Home() {
 
   return (
     <>
-      <Box >
-        <Box justifyContent='center'><Carrossel /></Box>
-        <h1 className='sub_titulo'>
-          Nossos produtos
-        </h1>
+      <Box>
+        <Box justifyContent="center">
+          <Carrossel />
+        </Box>
+        <h1 className="sub_titulo">Nossos produtos</h1>
       </Box>
       <ListaProduto />
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid alignItems="center" item xs={6}>
-          <Box paddingX={20}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-            >
-              Bem vinde ao The Green Market!
-            </Typography>
-            <Typography
-              variant="h5"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-            >
-              Impactar o individual para impactar o todo
-            </Typography>
-          </Box>
-          <Box display="flex" justifyContent="center">
-            <Box marginRight={1}></Box>
-            <Button
-              className="buttonHome"
-              style={{ background: "#2d5540", color: "#fff" }}
-              type="submit"
-              size="large"
-              variant="contained"
-              onClick={produtos}
-            >
-              Ver produtos
-            </Button>
-          </Box>
-        </Grid>
-        <Grid item xs={6}>
-          <img src={Logo} alt="Planeta Terra" />
-        </Grid>
-        <Grid xs={12}></Grid>
-      </Grid>
+    
     </>
   );
 }

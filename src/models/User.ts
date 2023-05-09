@@ -8,7 +8,7 @@ export interface User {
     telefoneUsuario: string;
     cepUsuario: string;
     usuario: string;
-    fotoUsuario?: string | null;
+    fotoUsuario?: string;
     senhaUsuario: string;
     produto?: Produto[];
 }

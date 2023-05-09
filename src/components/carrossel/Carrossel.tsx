@@ -10,6 +10,7 @@ const items = [
     <div className="img3" ></div>,
     <div className="img4" ></div>,
     <div className="img5" ></div>,
+    <div className="img6" ></div>,
 ];
 
 export const Carrossel= () => (
@@ -17,9 +18,10 @@ export const Carrossel= () => (
     mouseTracking
     items={items}
     infinite={true}
-    animationDuration={4500}
+    animationDuration={8500}
     disableButtonsControls
-    controlsStrategy="alternate"
+    controlsStrategy="responsive"
+    autoPlayStrategy='action'
     autoPlay={true}
     />
 );

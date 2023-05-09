@@ -32,6 +32,17 @@ function Footer() {
               </a>
               <a
                 style={{color: '#2d5540' }}
+                href='https://brasil.un.org/pt-br/sdgs/13'
+                target="_blank"
+              >
+              <img
+                alt="Logo ODS13"
+                src='https://i.imgur.com/A7RHixQ.png'
+                style={{ width: 37, height: 37, marginLeft: 8, marginBottom: 4, color: '#2d5540' }}
+              />
+              </a>
+              <a
+                style={{color: '#2d5540' }}
                 href='https://linktr.ee/ProjetoTheGreenMarket'
                 target="_blank"
               >
@@ -41,6 +52,7 @@ function Footer() {
                 style={{ width: 28, height: 28, marginLeft: 8, marginBottom: 4, color: '#2d5540' }}
               />
               </a>
+             
             </Box>
           </Box>
           <Box

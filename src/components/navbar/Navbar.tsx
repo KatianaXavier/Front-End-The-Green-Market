@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import {
   AppBar,
@@ -7,24 +7,61 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { Box } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "./../../assets/img/The_Green-Final.png";
 import { useSelector, useDispatch } from "react-redux";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { TokenState } from '../../store/tokens/tokensReducer';
 import { addToken } from "../../store/tokens/action";
+import { User } from "../../models/User";
+import { getById } from '../../services/Services';
 
 function Navbar() {
   const dispatch = useDispatch();
-  const token = useSelector<TokenState, TokenState["token"]>(
-    (state) => state.token
-  );
+ 
   const history = useNavigate();
 
   const back = () => {
     dispatch(addToken(""));
     history("/login");
   };
+  const userId = useSelector<TokenState, TokenState['id']>(
+    (state) => state.id
+)
+
+const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+)
+
+const [usuario, setUsuario] = useState<User>({
+  idUsuario: +userId,
+  nomeUsuario: "",
+  cpfUsuario: "",
+  enderecoUsuario: "",
+  telefoneUsuario: "",
+  cepUsuario: "",
+  usuario: '',
+  fotoUsuario: '',
+  senhaUsuario: '',
+  produto:[]
+})
+
+
+
+async function getUserById(id:number){
+await getById (`/usuarios/${id}`,setUsuario,{
+  Headers: {Authorization:token
+
+  }
+} )
+
+} 
+
+
+useEffect(() => {
+    getUserById(+userId)
+}, [])
+
   return (
     <>
       <AppBar
@@ -101,6 +138,8 @@ function Navbar() {
                         Sair
                       </Typography>
                     </Box>
+                    
+                    <Avatar src={usuario.fotoUsuario} style={{ width: '3rem', height: '3rem', margin: '0 auto' }} />
                   </Box>
                 </>
               ) : (
