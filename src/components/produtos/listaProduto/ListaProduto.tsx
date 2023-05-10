@@ -95,7 +95,7 @@ export function ListaProduto() {
                       {produto.descricaoProduto}
                     </Typography>
                     <Typography margin="10px 0" fontSize={18} gutterBottom component="h2">
-                      <strong>Categoria:</strong> {produto.categoria?.descricaoCategoria}
+                      <strong>Categoria:</strong> {produto.categoria?.nomeCategoria}
                     </Typography>
                     <Typography variant="h5" component="p" gutterBottom>
                       {`R$ ${(produto.precoProduto).toFixed(2)}`}

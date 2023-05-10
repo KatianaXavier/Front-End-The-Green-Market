@@ -18,7 +18,7 @@ import { getById } from '../../services/Services';
 
 function Navbar() {
   const dispatch = useDispatch();
- 
+
   const history = useNavigate();
 
   const back = () => {
@@ -27,40 +27,41 @@ function Navbar() {
   };
   const userId = useSelector<TokenState, TokenState['id']>(
     (state) => state.id
-)
+  )
 
-const token = useSelector<TokenState, TokenState['token']>(
+  const token = useSelector<TokenState, TokenState['token']>(
     (state) => state.token
-)
+  )
 
-const [usuario, setUsuario] = useState<User>({
-  idUsuario: +userId,
-  nomeUsuario: "",
-  cpfUsuario: "",
-  enderecoUsuario: "",
-  telefoneUsuario: "",
-  cepUsuario: "",
-  usuario: '',
-  fotoUsuario: '',
-  senhaUsuario: '',
-  produto:[]
-})
+  const [usuario, setUsuario] = useState<User>({
+    idUsuario: +userId,
+    nomeUsuario: "",
+    cpfUsuario: "",
+    enderecoUsuario: "",
+    telefoneUsuario: "",
+    cepUsuario: "",
+    usuario: '',
+    fotoUsuario: '',
+    senhaUsuario: '',
+    produto: []
+  })
 
 
 
-async function getUserById(id:number){
-await getById (`/usuarios/${id}`,setUsuario,{
-  Headers: {Authorization:token
+  async function getUserById(id: number) {
+    await getById(`/usuarios/${id}`, setUsuario, {
+      Headers: {
+        Authorization: token
+
+      }
+    })
 
   }
-} )
-
-} 
 
 
-useEffect(() => {
+  useEffect(() => {
     getUserById(+userId)
-}, [])
+  }, [])
 
   return (
     <>
@@ -138,11 +139,11 @@ useEffect(() => {
                         Sair
                       </Typography>
                     </Box>
-                    {
-                      console.log(usuario)
-                    }
-                    <Avatar src={usuario.fotoUsuario} style={{ width: '3rem', height: '3rem', margin: '0 auto' }} />
                   </Box>
+                  <Box>
+                  <Avatar src={usuario.fotoUsuario} style={{ width: '3rem', height: '3rem', marginTop: '20px'}} />
+                  </Box>
+                  
                 </>
               ) : (
                 <>

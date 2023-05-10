@@ -124,7 +124,7 @@ export const CadastroUsuario = () => {
 									variant="h3"
 									align="center"
 									gutterBottom
-									fontWeight="bold"
+									marginTop={4}
 								>
 									Cadastrar
 								</Typography>
