@@ -46,8 +46,8 @@ export function DeleteCategoria() {
     }
   })
 
-  function deletarCategoria() {
-    deleteId(`/categorias/${id}`, {
+  async function deletarCategoria() {
+    await deleteId(`/categorias/${id}`, {
       headers: {
         Authorization: token
       }

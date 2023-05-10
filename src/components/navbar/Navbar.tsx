@@ -140,10 +140,7 @@ function Navbar() {
                       </Typography>
                     </Box>
                   </Box>
-                  <Box>
-                  <Avatar src={usuario.fotoUsuario} style={{ width: '3rem', height: '3rem', marginTop: '20px'}} />
-                  </Box>
-                  
+                                    
                 </>
               ) : (
                 <>

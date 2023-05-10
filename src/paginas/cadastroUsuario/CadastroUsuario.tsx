@@ -261,7 +261,7 @@ export const CadastroUsuario = () => {
 										Cancelar
 									</Button>
 									<Button
-										style={{ background: "#2d5540" }}
+										style={{ background: "#2d5540", color: "#fff" }}
 										disabled={isLoading}
 										type="submit"
 										size="large"
