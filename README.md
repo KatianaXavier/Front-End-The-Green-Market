@@ -44,7 +44,7 @@ Fizemos o deploy do The Green Market na Vercel. Para conferir, clique <strong><a
 </div>
   
 ## 🧩 Back-end
-Para conferir o back-end do The green Market, clique <strong><a href="https://github.com/ProjetoTheGreenMarket/Back-End-The-Green-Market">aqui</strong>!
+Para conferir o back-end do The Green Market, clique <strong><a href="https://github.com/ProjetoTheGreenMarket/Back-End-The-Green-Market">aqui</strong>!
 
 ## 🔧 Ferramentas utilizadas 
 <p align="left">
